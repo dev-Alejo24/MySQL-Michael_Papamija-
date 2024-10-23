@@ -136,12 +136,12 @@ INSERT INTO peoplePhone (idPeople, phone) VALUES
 SELECT * FROM peoplePhone;
 
 -- INSERT INTO INVOICES
-INSERT INTO invoices (invoiceDate, totalAmount, idCustomer, dataRespons) VALUES
-('2024-10-01', 1250.50, 1, 'Factura para John Doe, cliente regular'),
-('2024-10-02', 500.75, 2, 'Factura generada por compra con descuento'),
-('2024-10-03', 799.99, 3, 'Pago realizado en efectivo, cliente satisfecho'),
-('2024-10-04', 1200.00, 4, 'Factura urgente, se necesita entrega inmediata'),
-('2024-10-05', 999.49, 5, 'Factura procesada con PayPal');
+INSERT INTO invoices (invoiceDate, totalAmount, idCustomer) VALUES
+('2024-10-01', 1250.50, 1),
+('2024-10-02', 500.75, 2),
+('2024-10-03', 799.99, 3),
+('2024-10-04', 1200.00, 4),
+('2024-10-05', 999.49, 5);
 SELECT * FROM invoices;
 
 -- INSERT INTO INVOICE DETAILS
@@ -165,10 +165,10 @@ INSERT INTO payment (idInvoice, paymentDate, idPaymentMethod, paymentAmount) VAL
 SELECT * FROM payment;
 
 -- INSERT INTO PAYMENT GATEWAY RECORDS
-INSERT INTO paymentGatewayRecords (reference, idPayment) VALUES
-('REF-001-JOHNDOE', 1), -- Referencia para el pago de la factura 1
-('REF-002-JANESMITH', 2), -- Referencia para el pago de la factura 2
-('REF-003-MARIAGARCIA', 3), -- Referencia para el pago de la factura 3
-('REF-004-PETERJOHNSON', 4), -- Referencia para el pago de la factura 4
-('REF-005-LINDABROWN', 5); -- Referencia para el pago de la factura 5
+INSERT INTO paymentGatewayRecords (reference, idPayment, dataRespons) VALUES
+('REF-001-JOHNDOE', 1, 'Factura para John Doe, cliente regular'), -- Referencia para el pago de la factura 1
+('REF-002-JANESMITH', 2, 'Factura generada por compra con descuento'), -- Referencia para el pago de la factura 2
+('REF-003-MARIAGARCIA', 3, 'Pago realizado en efectivo, cliente satisfecho'), -- Referencia para el pago de la factura 3
+('REF-004-PETERJOHNSON', 4, 'Factura urgente, se necesita entrega inmediata'), -- Referencia para el pago de la factura 4
+('REF-005-LINDABROWN', 5, 'Factura procesada con PayPal'); -- Referencia para el pago de la factura 5
 SELECT * FROM paymentGatewayRecords;
